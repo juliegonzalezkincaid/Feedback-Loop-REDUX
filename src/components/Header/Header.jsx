@@ -8,12 +8,7 @@ import Typography from '@mui/material/Typography';
 
 function Header () {
 
-    const history = useHistory();
-
-    const nextPage = () => {
-        event.preventDefault();
-        history.push('/feelings');
-    }
+   
     
     
     return (
@@ -29,7 +24,7 @@ function Header () {
                     >
                         Activity Log
                     </Typography>
-                 <Button onClick={nextPage}>Start</Button>
+              
                 </Toolbar>
             </AppBar>
         <h1>Activity Log</h1>

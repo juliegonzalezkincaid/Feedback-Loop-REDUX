@@ -25,7 +25,8 @@ function App() {
   return (
 
     <ThemeProvider theme= {theme} >
-    <div className='App'>
+    <div 
+    className='App'>
       <Router>
 
         <Route exact path="/">
@@ -51,10 +52,10 @@ function App() {
 
 
 
-        <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
+        <footer className='App-header'>
+          <h5 className='App-title'>Feedback!</h5>
           <h4>Don't forget it!</h4>
-        </header>
+        </footer>
       </Router>
     </div>
     </ThemeProvider>

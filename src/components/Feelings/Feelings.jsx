@@ -24,9 +24,9 @@ function Feelings() {
     const nextPage = (event) => {
        
         if (feelingLevel >= 0) {
-            history.push('/understanding');
-        } else {
             alert(`Please enter a number greater than 0 `)
+        } else {
+           history.push('/understanding'); 
 
         }
     }
@@ -36,15 +36,20 @@ function Feelings() {
     return (
         <>
 <ProgressBar currentStep={0}/>
-            <form>
+            <form onSubmit= {nextPage}>
                 <h2>How are you feeling? </h2>
                 <input
                     value={feelingLevel}
                     type="number"
                     placeholder="1-10"
-                    onChange={handleChange}>
+                    onChange={handleChange}
+                    min={0}
+                    max={10} >   
                 </input>
-                <Button onClick={nextPage}>Next</Button>
+                <Button 
+                onClick={nextPage}
+                type="submit"
+                >Next</Button>
 
             </form>
 
