@@ -8,7 +8,7 @@ function Understanding() {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const understandingLevel = useSelector(store => store.understanding)
+    const understandingLevel = useSelector(store => store.understandingLevel)
 
     const handleChange = (event) => {
         const action = { type: "SET_UNDERSTANDING", payload: event.target.value };
@@ -23,6 +23,7 @@ function Understanding() {
         }
     }
    
+   
     return (
 
         <>
@@ -34,7 +35,7 @@ function Understanding() {
                     type="number"
                     placeholder="1-10"
                     onChange={handleChange}
-                    min={0}
+                    min={1}
                     max={10}
                 >
                 </input>
@@ -43,6 +44,7 @@ function Understanding() {
                     type="submit"
                 >Next
                 </Button>
+               
             </form>
         </>
     )

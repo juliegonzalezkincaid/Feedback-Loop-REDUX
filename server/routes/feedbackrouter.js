@@ -3,16 +3,16 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 // GET feedback list from database
-router.get('/', (req, res) => {
-    console.log('In GET request');
-    let queryText = 'SELECT * from "feedback" ORDER BY id DESC;';
-    pool.query(queryText).then((result) => {
-        res.send(result.rows);
-    }).catch((error) => {
-        console.log(error);
-        res.sendStatus(500);
-    })
-});
+// router.get('/', (req, res) => {
+//     console.log('In GET request');
+//     let queryText = 'SELECT * from "feedback" ORDER BY id DESC;';
+//     pool.query(queryText).then((result) => {
+//         res.send(result.rows);
+//     }).catch((error) => {
+//         console.log(error);
+//         res.sendStatus(500);
+//     })
+// });
 
 // POST feedback entry to database
 router.post('/', (req, res) => {

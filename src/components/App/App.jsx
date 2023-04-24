@@ -7,6 +7,7 @@ import Understanding from '../Understanding/Understanding.jsx';
 import Header from '../Header/Header.jsx';
 import Support from '../Support/Support.jsx';
 import Review from '../Review/Review.jsx';
+import Comments from '../Comments/Comments.jsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -27,6 +28,7 @@ function App() {
     <ThemeProvider theme= {theme} >
     <div 
     className='App'>
+      <Header />
       <Router>
 
         <Route exact path="/">
@@ -49,10 +51,14 @@ function App() {
           <Review />
         </Route>
 
+        <Route exact path="/comments">
+          <Comments />
+        </Route>
 
 
 
-        <footer className='App-header'>
+
+        <footer className='App-footer'>
           <h5 className='App-title'>Feedback!</h5>
           <h4>Don't forget it!</h4>
         </footer>

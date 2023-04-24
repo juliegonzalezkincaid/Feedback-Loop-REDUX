@@ -5,29 +5,41 @@ import ProgressBar from '../ProgressBar/ProgressBar.jsx';
 import Button from '@mui/material/Button';
 
 
-function Comments () {
+function Comments() {
 
-const dispatch =useDispatch();
-const history = useHistory();
-const comments = useSelector(store => store.comments)
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const comments = useSelector(store => store.comments)
 
-const handleChange = (event) => {
-    const action = { type: "SET_COMMENTS", payload: event.target.value };
-    dispatch(action);
-}
+    const handleChange = (event) => {
+        const action = { type: "SET_COMMENTS", payload: event.target.value };
+        dispatch(action);
+    }
 
-const nextPage =() => {
-    const action = { type: 'CLEAR_FORMS' }
-    dispatch (action);
-    history.push('/');
-}
+    const nextPage = () => {
+        const action = { type: 'CLEAR_FORMS' }
+        dispatch(action);
+        history.push('/review');
+    }
 
 
-    return(
+    return (
 
         <>
-        <ProgressBar currentStep={3} />
-        <Button onClick={nextPage}></Button>
+            <ProgressBar currentStep={3} />
+            <form>
+                <h1>Please leave your comments here:</h1>
+                <input
+                    onChange={handleChange}
+                    type="text"
+                    value={comments}
+                    placeholder="Thank you "
+                ></input>
+                <Button
+                    onClick={nextPage}
+                    type= "submit">Submit
+                </Button>
+            </form>
         </>
     )
 }
