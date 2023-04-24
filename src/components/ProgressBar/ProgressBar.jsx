@@ -6,17 +6,22 @@ const steps = [
     'Feelings',
     'Understanding',
     'Support',
-    'Review'
+    'Comments',
+    'Review',
+    'Success!',
 ];
 
 function ProgressBar({currentStep}) {
 
     return (
-        <Stepper sx={{ marginTop: '20px' }}activeStep={currentStep}>
+        <Stepper sx={{ marginTop: '30px' }}activeStep={currentStep}>
             {
                 steps.map(label => (
             <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel>
+                {label}
+               
+            </StepLabel>
             </Step>
                 ))
             }

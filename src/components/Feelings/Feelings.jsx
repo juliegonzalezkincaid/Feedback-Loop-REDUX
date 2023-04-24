@@ -36,19 +36,24 @@ function Feelings() {
     return (
         <>
 <ProgressBar currentStep={0}/>
+<br />
+<br />
             <form onSubmit= {nextPage}>
-                <h2>How are you feeling? </h2>
+                <h1>How are you feeling on a scale from 1-10? </h1>
                 <input
                     value={feelingLevel}
                     type="number"
-                    placeholder="1-10"
+                    placeholder="#"
                     onChange={handleChange}
                     min={0}
                     max={10} >   
                 </input>
+                <br />
+                <br />
                 <Button 
                 onClick={nextPage}
                 type="submit"
+                variant="contained"
                 >Next</Button>
 
             </form>

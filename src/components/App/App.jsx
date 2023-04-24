@@ -8,12 +8,13 @@ import Header from '../Header/Header.jsx';
 import Support from '../Support/Support.jsx';
 import Review from '../Review/Review.jsx';
 import Comments from '../Comments/Comments.jsx';
+import Success from '../Success/Success.jsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#546941',
+      main: '#9FC131',
     },
    
   }
@@ -54,6 +55,12 @@ function App() {
         <Route exact path="/comments">
           <Comments />
         </Route>
+
+        <Route exact path="/success">
+          <Success />
+        </Route>
+
+
 
 
 

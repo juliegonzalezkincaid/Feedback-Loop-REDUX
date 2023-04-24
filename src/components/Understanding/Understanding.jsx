@@ -22,29 +22,32 @@ function Understanding() {
             history.push('/support');
         }
     }
-   
-   
+
+
     return (
 
         <>
             <ProgressBar currentStep={1} />
             <form>
-                <h2>Are you being understood?</h2>
+                <br />
+                <h1>How well are you being understood?</h1>
                 <input
                     value={understandingLevel}
                     type="number"
-                    placeholder="1-10"
+                    placeholder="#"
                     onChange={handleChange}
                     min={1}
                     max={10}
-                >
-                </input>
+                ></input>
+                <br />
+                <br />
                 <Button
+                    variant="contained"
                     onClick={nextPage}
                     type="submit"
                 >Next
                 </Button>
-               
+
             </form>
         </>
     )

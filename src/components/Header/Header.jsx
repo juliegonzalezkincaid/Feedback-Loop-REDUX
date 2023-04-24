@@ -22,7 +22,7 @@ function Header() {
                         component="div"
                         sx={{ flexGrow: 1 }}
                     >
-                        <Stack spacing={18} direction="row" justify-content="center">
+                        <Stack spacing={30} direction="row" justify-content="center">
                             <Link href="/#/feelings" sx={{ color: "teal" }} underline="hover">Feelings</Link>
                             <Link href="/#/understanding" sx={{ color: "teal" }} underline="hover">Understanding</Link>
                             <Link href="/#/support" sx={{ color: "teal" }} underline="hover">Support</Link>
@@ -34,7 +34,7 @@ function Header() {
 
                 </Toolbar>
             </AppBar>
-            <h1>Activity Log</h1>
+            
         </>
     )
 

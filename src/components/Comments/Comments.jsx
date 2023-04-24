@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import ProgressBar from '../ProgressBar/ProgressBar.jsx';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 
 function Comments() {
@@ -29,15 +30,26 @@ function Comments() {
             <ProgressBar currentStep={3} />
             <form>
                 <h1>Please leave your comments here:</h1>
-                <input
-                    onChange={handleChange}
-                    type="text"
-                    value={comments}
-                    placeholder="Thank you "
-                ></input>
+                <br />
+                
+
+
+                <TextField
+                     onChange={handleChange}
+                     value={comments}
+                     multiline
+                     rows={4}
+                     variant="outlined"
+                     placeholder="         Feedback"
+                />
+                <br />
+                <br />
                 <Button
                     onClick={nextPage}
-                    type= "submit">Submit
+                    type="submit"
+                    variant="contained"
+                    >Submit
+
                 </Button>
             </form>
         </>

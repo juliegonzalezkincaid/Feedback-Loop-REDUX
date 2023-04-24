@@ -26,7 +26,9 @@ function Support() {
 
         <>
             <ProgressBar currentStep={2} />
-            <h2>How much do you feel supported?</h2>
+            <br />
+            <br />
+            <h1>From 1-10, how well are you supported?</h1>
             <form onSubmit={nextPage}>
                 <input
                     id="support"
@@ -34,10 +36,14 @@ function Support() {
                     onChange={handleChange}
                     type="number"
                     min={0}
-                    max={10}
-                >
+                    max={10}>
                 </input>
-                <Button onClick={nextPage}>Next</Button>
+                <br />
+                <br />
+                <Button
+                    onClick={nextPage}
+                    variant="contained"
+                >Next</Button>
             </form>
 
         </>

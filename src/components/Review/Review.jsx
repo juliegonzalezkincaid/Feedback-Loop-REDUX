@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import ProgressBar from '../ProgressBar/ProgressBar';
@@ -8,9 +8,11 @@ function Review () {
 
 
     //keeps track of where the user has been 
+    // send info to store
 const history = useHistory();
+const dispatch = useDispatch();
 
-    //retreives values of each variables  from the store 
+    //retreive values of each variables  from the store 
 const feelings = useSelector(store => store.feelings);
 const understanding = useSelector ( store => store.understanding);
 const support = useSelector (store => store.support);
@@ -27,21 +29,42 @@ const sendFeedback = () => {
         comments: comments
     }).then(response => {
         console.log(response);
+        // Clear inputs
+        dispatch({ type: 'CLEAR_FORM' });
+        // back to start page
+        history.push('/')
     }).catch(error => {
         console.log(error);
     })
 }
 
+const nextPage = (event) => {
+    
+        history.push('/success');
+    }
+
+
     return(
 
         <>
         <ProgressBar currentStep={4} />
-        <h2>Please review your Feedback </h2>
+        <br />
+        <br />
+        <h1>Please review your Feedback </h1>
         <h3>Feelings: {feelings}</h3>
         <h3>Understanding: {understanding}</h3>
         <h3>Support: {support}</h3>
         <h3>Comments: {comments}</h3>
-        <Button onClick={sendFeedback}>Thank you!</Button>
+        <Button 
+        onClick={sendFeedback}
+        variant="contained"
+        >Save</Button>
+        <br />
+        <br />
+        <Button 
+            onClick={nextPage}
+            variant="contained"
+            >Submit!</Button>
         </>
     )
 }
