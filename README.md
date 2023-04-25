@@ -7,7 +7,7 @@ Duration: 2 Week Sprint
 
  ## Screen Shot 
 
-![Feedback icon](FEEDBACK.png)
+![Feedback icon](FEEDBACK1.png)
 
 ## Installation
 1. Create a database named "feedback"
